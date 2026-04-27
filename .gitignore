@@ -1,0 +1,15 @@
+# Godot
+.godot/
+
+# Python
+__pycache__/
+*.pyc
+
+# Builds
+build/
+dist/
+*.exe
+
+# Sistema
+.DS_Store
+Thumbs.db
