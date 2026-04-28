@@ -1,0 +1,6 @@
+paquime chihuahua [312, 206]
+tajin veracruz [633, 405]
+cholula puebla [555, 398]
+la ferreria durango [356, 278]
+guauchimontones jalisco [398, 353]
+tamohi san luis potosi [467, 291]

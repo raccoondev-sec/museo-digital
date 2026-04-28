@@ -53,6 +53,24 @@ ciudades_img = {
     "punto_3": pygame.transform.smoothscale(
         pygame.image.load("imagenes/Monte-Alban.webp"), (WIDTH, HEIGHT)
     ),
+    "punto_4": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/paquime.webp"), (WIDTH, HEIGHT)
+    ),
+    "punto_5": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/tajin.webp"), (WIDTH, HEIGHT)
+    ),
+    "punto_6": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/cholula.webp"), (WIDTH, HEIGHT)
+    ),
+    "punto_7": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/ferreria.webp"), (WIDTH, HEIGHT)
+    ),
+    "punto_8": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/guachimontones.webp"), (WIDTH, HEIGHT)
+    ),
+    "punto_9": pygame.transform.smoothscale(
+        pygame.image.load("imagenes/tamohi.webp"), (WIDTH, HEIGHT)
+    ),
 }
 
 ciudades_texto = {
@@ -70,7 +88,26 @@ ciudades_texto = {
 
     "punto_3": """Monte Albán: Monte Albán fue la capital de los zapotecas y una de las primeras ciudades de Mesoamérica. 
     Está construida sobre una montaña con vistas al valle de Oaxaca. 
-    Destaca por sus plazas ceremoniales, tumbas y el sistema de escritura zapoteca."""
+    Destaca por sus plazas ceremoniales, tumbas y el sistema de escritura zapoteca.""",
+
+    "punto_4": """Paquimé: Antigua ciudad del norte de México (cultura Casas Grandes), destacada por su arquitectura de adobe, 
+    sistemas hidráulicos y comercio con el suroeste de EE. UU. 
+    Fue un importante centro cultural entre los siglos XIII y XV.""",
+
+    "punto_5": """El Tajín: Ciudad totonaca famosa por la Pirámide de los Nichos. 
+    Floreció entre los siglos IX y XIII y es conocida por su arquitectura monumental y sus numerosos juegos de pelota.""",
+
+    "punto_6": """Cholula: Uno de los asentamientos más antiguos de Mesoamérica. 
+    Alberga la Gran Pirámide (la más grande en volumen del mundo) y fue un importante centro religioso y comercial.""",
+
+    "punto_7": """La Ferrería: Sitio asociado a culturas del norte como los chalchihuites. 
+    Destaca por sus estructuras ceremoniales y su ubicación estratégica para el comercio regional.""",
+
+    "punto_8": """Guachimontones: Sitio de la tradición Teuchitlán, famoso por sus estructuras circulares únicas 
+    (pirámides en forma de anillos concéntricos) y complejos ceremoniales.""",
+
+    "punto_9": """Tamtoc: Importante ciudad huasteca ubicada en la región del río Tamuín. 
+    Destaca por sus esculturas, plazas y evidencia del papel relevante de las mujeres en su sociedad.""",
 }
 
 # =========================
@@ -87,6 +124,12 @@ sonidos = {
     "punto_1": pygame.mixer.Sound("audio/chichenitza.ogg"),
     "punto_2": pygame.mixer.Sound("audio/palenque.ogg"),
     "punto_3": pygame.mixer.Sound("audio/montealban.ogg"),
+    "punto_4": pygame.mixer.Sound("audio/paquime.ogg"),
+    "punto_5": pygame.mixer.Sound("audio/tajin.ogg"),
+    "punto_6": pygame.mixer.Sound("audio/cholula.ogg"),
+    "punto_7": pygame.mixer.Sound("audio/ferreria.ogg"),
+    "punto_8": pygame.mixer.Sound("audio/guachimontones.ogg"),
+    "punto_9": pygame.mixer.Sound("audio/tamohi.ogg"),
 }
 
 sonido_actual = None
@@ -219,6 +262,10 @@ while True:
             x, y = pos
             color = (255,255,120) if pygame.Rect(x-12,y-12,24,24).collidepoint(mouse) else (0,180,255)
             pygame.draw.circle(screen, color, (x,y), 10)
+        
+        # mostrar mouse position
+        pos_text = font.render(str(mouse), True, (255,255,255))
+        screen.blit(pos_text, (10, HEIGHT - 30))
 
         # PANEL GLASS
         panel = pygame.Surface((520, 220), pygame.SRCALPHA)
@@ -279,3 +326,5 @@ while True:
         screen.blit(overlay, (0,0))
 
     pygame.display.flip()
+
+
